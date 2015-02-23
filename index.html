@@ -1,22 +1,68 @@
 <!doctype html>
-<html ng-app="app" lang="en">
+<html ng-app="app" ng-controller="rootController" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>{{title}}</title>
     
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 <body>
     
     <!--Header-->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Navbav bar brand and toggle -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="fa fa-bars"></i>
+                </button>
+                <div class="navbar-brand">
+                    <a ui-sref="home">
+                        <i class="fa fa-user-secret"></i>
+                        Sandbox
+                    </a>
+                </div>
+            </div>
+            
+            <!--Navbar navigation-->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+                <!--Navbar left-->
+                <div class="nav navbar-nav" main-navigation></div>
+            
+                <!--Navbar right-->
+                <div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#">
+                                Login
+                                <i class="glyphicon glyphicon-user margin-left-10"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    
+                </div>
+
+            </div>
+        </div>
+    </nav>
     
     <!--Main View-->
-    <div ui-view></div>
+    <div class="container">
+        <div ui-view></div>
+    </div>
     
     <!--Footer-->
+    <div class="container">
+        
+    </div>
     
     <!--Scripts-->
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.css"></script>

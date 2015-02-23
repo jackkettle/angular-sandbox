@@ -1,5 +1,61 @@
-/*
-    Vars
-*/
+/*************
+        Vars
+*************/
 
-@primaryColor: #fff;
+@Primary-Light: #eceff1;
+@Secondary-Light: #00e676;
+
+@Primary-Mid: #cfd8dc;
+@Secondary-Mid: #69f0ae;
+
+@Primary-Dark: #37474f;
+@Secondary-Dark: #607d8b;
+
+/**************************
+        Basic
+**************************/
+
+body{
+    color: @Primary-Dark;
+    background-color: @Primary-Light;    
+}
+
+/**************************
+        Header
+**************************/
+
+.navbar {
+    border-radius: 0;
+    background-color: @Primary-Dark;
+    
+    .navbar-nav > li > a{
+        color: @Primary-Light;
+        &:hover, &:active {
+            color: @Secondary-Light;
+            text-decoration: none;
+        }
+    }
+    
+    .navbar-brand > a{
+        color: @Primary-Light;
+        &:hover, &:active {
+            color: @Secondary-Light;
+            text-decoration: none;
+        }
+    }
+}
+
+
+.circle {
+	border-radius: 50%;
+	height: 50px;
+	width: 50px;
+}
+
+.margin-left-10{
+    margin-left: 1em;
+}
+
+/**************************
+        Page Specific
+**************************/

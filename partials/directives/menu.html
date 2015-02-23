@@ -1,0 +1,19 @@
+<ul>
+    <!--Without children-->
+    <li ng-if="!object.data.children" ui-sref-active="active" ng-repeat="object in navigation">
+        <a ui-sref="{{object.name}}">{{object.data.name}}</a>
+    </li>
+    
+    <!--With children-->
+    <li ng-if="object.data.children" ui-sref-active="active" ng-repeat="object in navigation">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            {{object.data.name}}
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+            <li ui-sref-active="active" ng-repeat="child in object.data.children">
+                <a ui-sref="{{child}}">{{$state.get(child).data.name}}</a>
+            </li>
+        </ul>
+    </li>
+</ul>
