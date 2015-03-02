@@ -1,6 +1,6 @@
 // Testing
 
-var app = angular.module('app', ['ui.router'])
+var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
 app.config(function($stateProvider, $urlRouterProvider) {
 
@@ -28,19 +28,20 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
     })
     
-    .state('state2', {
-      url: "/state2",
-      templateUrl: "partials/state2.html",
+    .state('filesaver', {
+      url: "/filesaver",
+      templateUrl: "partials/filesaver.html",
       abstract: true,
-      controller: function () {
+      controller: function($scope){
+        $scope.stateTitle = "Filesaver.js";
       },
       data: {
-        name: "State 2",
-        children: ["state2.option1", "state2.option2"]
+        name: "Filesaver.js",
+        children: ["filesaver.option1", "filesaver.option2"]
       }
     })
     
-    .state('state2.option1', {
+    .state('filesaver.option1', {
       url: "/option1",
       templateUrl: "partials/option1.html",
       data: {
@@ -49,7 +50,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
     })
     
-    .state('state2.option2', {
+    .state('filesaver.option2', {
       url: "/option2",
       templateUrl: "partials/option2.html",
       data: {
@@ -60,12 +61,43 @@ app.config(function($stateProvider, $urlRouterProvider) {
 })
 
 .controller('rootController', function($rootScope, $state) {
-  
   // update title on state change
   $rootScope.$on('$stateChangeSuccess', 
   function(event, toState, toParams, fromState, fromParams){
     $rootScope.title = toState.data.name;
   })
+})
+
+.controller('fileSaverController', function($scope, $http) {
+  
+  // code exaples
+  $scope.htmlCode1  = "";
+  $scope.jsCode1 = "";
+  $scope.htmlCode2 = "";
+  $scope.jsCode2 = "";
+  
+  // Code examples path locations
+  var htmlCode1Path  = "resources/data/example1html.html";
+  var jsCode1Path = "resources/data/example1js.txt";
+  var htmlCode2Path = "resources/data/example2html.txt";
+  var jsCode2Path = "resources/data/example2js.txt";
+  
+  // get code exaples
+  $http.get(htmlCode1Path).success(function(data){
+    $scope.htmlCode1 = data
+  });
+  $http.get(jsCode1Path).success(function(data){
+    $scope.jsCode1 = data
+  });
+  $http.get(htmlCode2Path).success(function(data){
+    $scope.htmlCode2 = data
+  });
+  $http.get(jsCode2Path).success(function(data){
+    $scope.jsCode2 = data
+  });
+  
+  //html encode code examples
+
 })
 
 .directive('mainNavigation', function() {

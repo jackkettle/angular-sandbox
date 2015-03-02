@@ -4,16 +4,70 @@
 /**************************
         Basic
 **************************/
+html,
 body {
   color: #37474f;
-  background-color: #eceff1;
+  background-color: #ffffff;
+  height: 100%;
+}
+.main-view {
+  min-height: 100%;
+}
+.page-footer {
+  height: 70px;
+  /* .push must be the same height as .footer */
+}
+/**************************
+        Objects
+**************************/
+.code-block {
+  border-radius: 0;
+  margin: 0;
+  height: 100%;
+}
+hr.hr-mute {
+  border: 1px solid #cfd8dc;
+  height: 0px;
+  min-height: 0px;
+}
+.footer-link {
+  color: #37474f;
+  background-color: transparent;
+}
+.footer-link:hover,
+.footer-link:active {
+  background-color: transparent !important;
+  color: #00e676;
+  text-decoration: none;
+}
+/**************************
+        Helpers
+**************************/
+.margin-top-20 {
+  margin-top: 20px;
+}
+.margin-bottm-20 {
+  margin-bottom: 20px;
+}
+.margin-left-10 {
+  margin-left: 10px;
+}
+.margin-right-10 {
+  margin-right: 10px;
+}
+.fixed-min-height {
+  min-height: 250px;
 }
 /**************************
         Header
 **************************/
 .navbar {
+  margin-bottom: 0px;
+  border-bottom: 0;
+  border-top: 10px solid #37474f;
   border-radius: 0;
-  background-color: #37474f;
+  background-color: #455a64;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 .navbar .navbar-nav > li > a {
   color: #eceff1;
@@ -36,9 +90,53 @@ body {
   height: 50px;
   width: 50px;
 }
-.margin-left-10 {
-  margin-left: 1em;
+.page-top {
+  background-color: #eceff1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  margin-bottom: 20px;
 }
 /**************************
         Page Specific
 **************************/
+.tabset {
+  background-color: #607d8b;
+  border: 1px solid #607d8b;
+  border-radius: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.tabset ul {
+  border: 0px;
+  color: #eceff1 !important;
+  background-color: #607d8b !important;
+}
+.tabset ul li.active a {
+  background-color: #607d8b !important;
+  color: #00e676 !important;
+  border: 0 !important;
+  border-bottom: 2px solid #00e676 !important;
+}
+.tabset ul li.active a:active {
+  color: #00e676 !important;
+}
+.tab-pane {
+  padding: 5px;
+  background-color: #607d8b;
+  border-radius: 0;
+  height: 350px;
+  margin: 0;
+}
+.tab {
+  border-radius: 0;
+  border: 0;
+}
+.tab > a {
+  margin-left: 10px;
+  color: #eceff1 !important;
+  border-radius: 0 !important;
+  border: 0 !important;
+}
+.tab > a:hover,
+.tab > a:active {
+  color: #00e676 !important;
+  background-color: #607d8b !important;
+}

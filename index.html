@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 <body>
-    
+
     <!--Header-->
     <nav class="navbar navbar-default">
         <div class="container">
@@ -51,21 +51,26 @@
     </nav>
     
     <!--Main View-->
-    <div class="container">
-        <div ui-view></div>
-    </div>
+    <div class="main-view" ui-view></div>
     
     <!--Footer-->
-    <div class="container">
+    <nav class="page-footer text-center">
+        <div class="col-md-12">
+            <ul class="nav nav-pills nav-justified">
+                <li><a href="https://github.com/jackkettle" class="footer-link"><i class="fa fa-github fa-2x margin-right-10"></i>Jack Kettle</a></li>
+            </ul>
+        </div>
+    </nav>
         
-    </div>
-    
     <!--Scripts-->
+    <!--Dependencies-->
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.css"></script>
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="bower_components/file-saver/FileSaver.min.js"></script>
+    <!--Angularjs app-->
     <script type="text/javascript" src="js/dest/main.min.js"></script>
     
 </body>

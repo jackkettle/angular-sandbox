@@ -1,3 +1,49 @@
-<section>
-    <h1>Option1</h1>
-</section>
+<div>
+    <div class="page-top">
+        <div class="container">
+            <h1>{{ stateTitle }}</h1>
+            <h3>Angularjs</h3>
+            <div class="col-md-12">
+                <p>Testing basic functionality with a csv file.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12" ng-controller="fileSaverController">
+        <div class="col-md-12">
+            <h4>Using a controller</h4>
+            <tabset class="tabset">
+                <tab class="tab" heading="html">
+                    <pre class="code-block">
+                        <code>{{ htmlCode1 }}</code>
+                    </pre>
+                </tab>
+                <tab class="tab" heading="javascript">
+                    <pre class="code-block">
+                        <code>{{ jsCode1 }}</code>
+                    </pre>
+                </tab>
+                <tab class="tab" heading="example">
+                    This is some content.
+                </tab>
+            </tabset>
+        </div>
+        <div class="col-md-12 margin-top-20">
+            <h4>Using a directive</h4>
+            <tabset class="tabset">
+                <tab class="tab" heading="html">
+                    <pre class="code-block">
+                        <code>{{ htmlCode2 }}</code>
+                    </pre>
+                </tab>
+                <tab class="tab" heading="javascript">
+                    <pre class="code-block">
+                        <code>{{ jsCode2 }}</code>
+                    </pre>
+                </tab>
+                <tab class="tab" heading="example">
+                    This is some content.
+                </tab>
+            </tabset>
+        </div>
+    </div>
+</div>

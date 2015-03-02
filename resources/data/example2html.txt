@@ -1,0 +1,14 @@
+<div class="col-md-12">
+    <h4 class="col-md-12">Using a controller</h4>
+    <div class="col-md-6">
+        <em class="col-md-12">html</em>
+        <code class="col-md-12 fixed-min-height code-block">{{ js_code_1 }}</code>
+    </div>
+    <div class="col-md-6">
+        <em class="col-md-12">javascript</em>
+        <code class="col-md-12 fixed-min-height code-block">{{ js_code_1 }}</code>
+    </div>
+    <div class="col-md-12">
+        <h4 class="col-md-12">Example</h4>
+    </div>
+</div>

@@ -2,6 +2,8 @@
         Vars
 *************/
 
+@Main-white: #FFF;
+
 @Primary-Light: #eceff1;
 @Secondary-Light: #00e676;
 
@@ -9,15 +11,74 @@
 @Secondary-Mid: #69f0ae;
 
 @Primary-Dark: #37474f;
-@Secondary-Dark: #607d8b;
+@Secondary-Dark: #455a64;
+@Alt-Dark: #607d8b;
 
 /**************************
         Basic
 **************************/
-
-body{
+html, body{
     color: @Primary-Dark;
-    background-color: @Primary-Light;    
+    background-color: @Main-white;
+    height:100%;
+}
+
+.main-view{
+    min-height: 100%;
+}
+
+.page-footer{
+    height: 70px; /* .push must be the same height as .footer */
+}
+/**************************
+        Objects
+**************************/
+
+.code-block{
+    border-radius: 0;
+    margin: 0;
+    height: 100%;
+}
+
+
+hr.hr-mute{
+    border: 1px solid @Primary-Mid;
+    height: 0px;
+    min-height: 0px;
+}
+
+.footer-link{
+    color: @Primary-Dark;
+    background-color: transparent;
+    &:hover, &:active {
+        background-color: transparent !important;
+        color: @Secondary-Light;
+        text-decoration: none;
+    }
+}
+
+/**************************
+        Helpers
+**************************/
+
+.margin-top-20{
+    margin-top:20px;
+}
+
+.margin-bottm-20{
+    margin-bottom:20px;
+}
+
+.margin-left-10{
+    margin-left: 10px;
+}
+
+.margin-right-10{
+    margin-right: 10px;
+}
+
+.fixed-min-height{
+    min-height: 250px;
 }
 
 /**************************
@@ -25,8 +86,12 @@ body{
 **************************/
 
 .navbar {
+    margin-bottom: 0px;
+    border-bottom: 0;
+    border-top: 10px solid @Primary-Dark;
     border-radius: 0;
-    background-color: @Primary-Dark;
+    background-color: @Secondary-Dark;
+    .BoxShadowHelper(1);
     
     .navbar-nav > li > a{
         color: @Primary-Light;
@@ -52,10 +117,77 @@ body{
 	width: 50px;
 }
 
-.margin-left-10{
-    margin-left: 1em;
+.page-top{
+    background-color: @Primary-Light;
+    .BoxShadowHelper(1);
+    margin-bottom: 20px;
 }
 
 /**************************
         Page Specific
 **************************/
+
+.tabset {
+    background-color: @Alt-Dark;
+    border: 1px solid @Alt-Dark;
+    border-radius: 0;
+    .BoxShadowHelper(1);
+    
+    ul{
+        border: 0px;
+        color: @Primary-Light !important;
+        background-color: @Alt-Dark !important;
+        li.active{
+            a{
+                background-color: @Alt-Dark !important;
+                color: @Secondary-Light !important;
+                border: 0 !important;
+                border-bottom: 2px solid @Secondary-Light !important;
+                &:active{
+                    color: @Secondary-Light !important;
+                }
+            }
+        }
+    }
+}
+
+.tab-pane{
+    padding: 5px;
+    background-color: @Alt-Dark;
+    border-radius: 0;
+    height: 350px;
+    margin: 0;
+}
+
+.tab{
+    border-radius: 0;
+    border: 0;
+    > a {
+        margin-left: 10px;
+        color: @Primary-Light !important;
+        border-radius: 0 !important;
+        border: 0 !important;
+        &:hover, &:active{
+            color: @Secondary-Light !important;
+            background-color: @Alt-Dark !important;
+        }
+    }   
+}
+
+.BoxShadowHelper(@level: 1){
+    & when (@level = 1) {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+    & when (@level = 2) {
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+    & when (@level = 3) {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+    & when (@level = 4) {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+    & when (@level = 5) {
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    }
+} 
