@@ -18,6 +18,9 @@
     "angular-ui-router": "~0.2.13",
     "angular": "~1.3.13",
     "bootstrap": "~3.3.2",
-    "fontawesome": "~4.3.0"
+    "fontawesome": "~4.3.0",
+    "google-code-prettify": "~1.0.4",
+    "file-saver": "*",
+    "angular-bootstrap": "~0.12.1"
   }
 }

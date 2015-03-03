@@ -2,7 +2,7 @@
 
 var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
   // For any unmatched url, redirect to
   $urlRouterProvider.otherwise("/");
@@ -58,6 +58,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         children: false
       }
     })
+    
 })
 
 .controller('rootController', function($rootScope, $state) {
@@ -68,7 +69,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
   })
 })
 
-.controller('fileSaverController', function($scope, $http) {
+.controller('fileSaverExamplesController', function($scope, $http, $timeout) {
   
   // code exaples
   $scope.htmlCode1  = "";
@@ -77,10 +78,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $scope.jsCode2 = "";
   
   // Code examples path locations
-  var htmlCode1Path  = "resources/data/example1html.html";
-  var jsCode1Path = "resources/data/example1js.txt";
-  var htmlCode2Path = "resources/data/example2html.txt";
-  var jsCode2Path = "resources/data/example2js.txt";
+  var htmlCode1Path  = "resources/data/example1/html.txt";
+  var jsCode1Path = "resources/data/example1/js.txt";
+  var htmlCode2Path = "resources/data/example2/html.txt";
+  var jsCode2Path = "resources/data/example2/js.txt";
   
   // get code exaples
   $http.get(htmlCode1Path).success(function(data){
@@ -94,10 +95,24 @@ app.config(function($stateProvider, $urlRouterProvider) {
   });
   $http.get(jsCode2Path).success(function(data){
     $scope.jsCode2 = data
+    $timeout(function () {
+      // Call prettyPrint to apply syntax highlighting on pre tags
+      prettyPrint();
+    }, 500);
   });
   
-  //html encode code examples
+})
 
+.controller('fileSaverExampleController', function($scope) {
+  
+  var date = new Date();
+  var json = date.toJSON()
+  var blob = new Blob([json], {type: "text/plain;charset=utf-8"});
+  
+  $scope.save = function(name){
+    saveAs(blob, name);
+  }
+  
 })
 
 .directive('mainNavigation', function() {

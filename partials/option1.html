@@ -4,26 +4,29 @@
             <h1>{{ stateTitle }}</h1>
             <h3>Angularjs</h3>
             <div class="col-md-12">
-                <p>Testing basic functionality with a csv file.</p>
+                <p>
+                    Testing basic functionality with a csv file.<br>
+                    <a href="https://github.com/eligrey/FileSaver.js/">https://github.com/eligrey/FileSaver.js/</a>
+                </p>
             </div>
         </div>
     </div>
-    <div class="col-md-12" ng-controller="fileSaverController">
+    <div class="container" ng-controller="fileSaverExamplesController">
         <div class="col-md-12">
             <h4>Using a controller</h4>
             <tabset class="tabset">
                 <tab class="tab" heading="html">
-                    <pre class="code-block">
-                        <code>{{ htmlCode1 }}</code>
-                    </pre>
+                    <pre class="code-block"><code><xmp class="prettyprint">{{htmlCode1}}</xmp></code></pre>
                 </tab>
                 <tab class="tab" heading="javascript">
-                    <pre class="code-block">
-                        <code>{{ jsCode1 }}</code>
-                    </pre>
+                    <pre class="code-block"><code><xmp class="prettyprint">{{ jsCode1 }}</xmp></code></pre>
                 </tab>
                 <tab class="tab" heading="example">
-                    This is some content.
+                    <div class="tab-inner-content">
+                        <div ng-controller="fileSaverExampleController">
+                             <a href="" class="btn btn-primary" ng-click="save('helloworld.txt')">Save file</a>
+                        </div>
+                    </div>
                 </tab>
             </tabset>
         </div>
@@ -31,17 +34,16 @@
             <h4>Using a directive</h4>
             <tabset class="tabset">
                 <tab class="tab" heading="html">
-                    <pre class="code-block">
-                        <code>{{ htmlCode2 }}</code>
+                    <pre class="code-block prettyprint"><code><xmp>{{ htmlCode2 }}</xmp></code></pre>
                     </pre>
                 </tab>
                 <tab class="tab" heading="javascript">
-                    <pre class="code-block">
-                        <code>{{ jsCode2 }}</code>
-                    </pre>
+                    <pre class="code-block prettyprint"><code><xmp>{{ jsCode2 }}</xmp></code></pre>
                 </tab>
                 <tab class="tab" heading="example">
-                    This is some content.
+                    <div class="tab-content" ng-controller="fileSaverExampleController">
+                        <a href="" class="btn btn-primary" ng-click="save('helloworld.txt')">Save file</a>
+                    </div>
                 </tab>
             </tabset>
         </div>

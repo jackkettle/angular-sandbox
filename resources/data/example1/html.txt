@@ -1,0 +1,3 @@
+<div ng-controller="fileSaverExampleController">
+    <a href="" class="btn btn-primary" ng-click="save('helloworld.txt')">Save file</a>
+</div>
