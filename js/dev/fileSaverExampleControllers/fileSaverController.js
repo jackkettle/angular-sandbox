@@ -1,0 +1,11 @@
+app.controller('fileSaverController', function($scope) {
+
+	var date = new Date();
+	var json = date.toJSON()
+	var blob = new Blob([json], {type: "text/plain;charset=utf-8"});
+	
+	$scope.save = function(name){
+		saveAs(blob, name);
+	}
+	
+})
